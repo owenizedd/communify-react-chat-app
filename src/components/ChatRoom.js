@@ -10,7 +10,7 @@ function ChatRoom() {
   const auth = getAuth();
   const messagesRef = collection(firestore, 'messages');
   const bottomMessage = useRef();
-  const q = query(messagesRef, orderBy('createdAt'), limit(25));
+  const q = query(messagesRef, orderBy('createdAt'));
 
   const [messages, , error] = useCollectionData(q, { idField: 'id' });
   if (!!error) {
