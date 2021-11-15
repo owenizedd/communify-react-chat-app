@@ -27,10 +27,8 @@ function ChatRoom() {
     const userBannedDoc =  doc(firestore, "banned_user", uid);
     const userBannedData = await getDoc(userBannedDoc);
 
-    if (!userBannedData.exists()){
-      if (messageForm !== "") {
-        return;
-      } else if (!filterBadWords(messageForm) ){
+    if (!userBannedData.exists() && messageForm !== ""){
+      if (!filterBadWords(messageForm) ){
         console.log('banning');
         const newBannedRef = doc(firestore, 'banned_user', uid);
         await setDoc(newBannedRef, {});
