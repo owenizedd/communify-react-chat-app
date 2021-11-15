@@ -5,6 +5,8 @@ export function filterBadWords(string) {
     string = string.trim();
     string = string.replace(/\W/g, '');
     string = string.toLowerCase();
+
+    //I am sorry for putting it here, because firesbase cloud functions are paid.
     const badWords = ['anjing', 'babi', 'taik', 'kontol', 'memek', 'ngentot'];
 
 
