@@ -13,7 +13,7 @@ function ChatRoom() {
   const q = query(messagesRef, orderBy('createdAt'), limit(25));
 
   const [messages, , error] = useCollectionData(q, { idField: 'id' });
-  if (error) {
+  if (!!error) {
     console.log(error);
   }
 
