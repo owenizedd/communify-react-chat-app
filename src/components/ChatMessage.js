@@ -14,7 +14,7 @@ function ChatMessage({ message }) {
           <img src={profilePhoto} width="25" height="25" alt="profile" 
           onError={(e)=>{e.target.onerror = null; setProfilePhoto("https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png")}}/> 
       </picture>
-      <p className={`rounded-lg p-3 ${ownerBg} `}>{text}</p>
+      <p className={`rounded-full p-3 ${ownerBg} `}>{text}</p>
     </div>
   )
 }

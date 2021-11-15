@@ -1,14 +1,16 @@
 
 import { useState, useRef, useEffect } from 'react';
-import { collection, query, orderBy, addDoc, serverTimestamp, getFirestore } from 'firebase/firestore';
+import { collection, query,  orderBy, addDoc, doc, setDoc, getDoc, serverTimestamp, getFirestore } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { getAuth } from '@firebase/auth';
 import ChatMessage from './ChatMessage';
+import { filterBadWords } from '../utils/messaging-helper';
 
 function ChatRoom() {
   const firestore = getFirestore();
   const auth = getAuth();
   const messagesRef = collection(firestore, 'messages');
+
   const bottomMessage = useRef();
   const q = query(messagesRef, orderBy('createdAt'));
 
@@ -22,13 +24,24 @@ function ChatRoom() {
     e.preventDefault();
     
     const { uid, photoURL } = auth.currentUser;
-    await addDoc(messagesRef, {
-      text: messageForm,
-      createdAt: serverTimestamp(),
-      uid,
-      photoURL,
-    })
+    const userBannedDoc =  doc(firestore, "banned_user", uid);
+    const userBannedData = await getDoc(userBannedDoc);
 
+    if (!userBannedData.exists()){
+      if (!filterBadWords(messageForm)){
+        console.log('banning');
+        const newBannedRef = doc(firestore, 'banned_user', uid);
+        await setDoc(newBannedRef, {});
+      } else {
+        await addDoc(messagesRef, {
+          text: messageForm,
+          createdAt: serverTimestamp(),
+          uid,
+          photoURL,
+        })
+      }
+    }
+    
     setMessageForm('');
     bottomMessage.current.scrollIntoView({ behavior: 'smooth' })
   }
