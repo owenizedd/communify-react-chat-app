@@ -1,5 +1,5 @@
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { collection, query, orderBy, addDoc, serverTimestamp, getFirestore } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { getAuth } from '@firebase/auth';
@@ -32,6 +32,10 @@ function ChatRoom() {
     setMessageForm('');
     bottomMessage.current.scrollIntoView({ behavior: 'smooth' })
   }
+  useEffect(() => {
+    bottomMessage.current.scrollIntoView();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bottomMessage.current])
   return (
     <>
       <div className="h-4/5 mb-12 text-white">
