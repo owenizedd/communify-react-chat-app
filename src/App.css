@@ -52,3 +52,53 @@
     content: 'Loading...';
   }
 }
+
+
+.emoji-picker{ 
+  opacity: 0;
+  visibility: hidden;
+
+  position: relative;
+}
+.emoji-picker--button{
+  width: 30px;
+  left: -25px;
+  position:absolute;
+}
+.text-message:hover .emoji-picker{
+  opacity: 1;
+  visibility: visible;
+
+}
+.emoji-picker--list {
+  position: absolute;
+  display: block;
+  height: 20vh;
+  width: 30vw;
+  top: -20vh;
+  right: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .emoji-picker--list {
+ 
+    width: 35vw;
+    right: -15vw;
+  }
+}
+.emoji-list--author{
+  display: none;
+}
+
+.emoji-list--data:hover .emoji-list--author{
+  display: block;
+  width: 15%;
+  top: -10px;
+  background:rgba(30, 30, 30, 0.8);
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+
+}

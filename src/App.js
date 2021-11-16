@@ -24,7 +24,7 @@ function App() {
   console.log(user);
   return (
     <div className="App bg-indigo-900 ">
-      <header className="flex sticky top-0 App-header text-indigo-100 text-opacity-75 bg-indigo-500 justify-between py-2 px-5">
+      <header className="flex z-50 sticky top-0 App-header text-indigo-100 text-opacity-75 bg-indigo-500 justify-between py-2 px-5">
         <div className='flex space-x-4'>
           <img src="/images.jpeg" width='30' height='30' alt='logo'/>
           <h1 className="text-2xl font-light">Communify</h1>
