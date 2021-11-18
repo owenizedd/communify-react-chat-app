@@ -93,16 +93,24 @@
   }
 }
 .emoji-list--author{
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: 300ms all;
 }
 
 .emoji-list--data:hover .emoji-list--author{
-  display: block;
-  width: 15%;
+  opacity: 1;
+  visibility: visible;
+  width: fit-content;
   top: -10px;
   background:rgba(30, 30, 30, 0.8);
   color: white;
   border-radius: 5px;
   position: absolute;
 
+}
+.emoji-list--author.owner{
+  transform: translateX(-100px);
+  width: 100px;
 }

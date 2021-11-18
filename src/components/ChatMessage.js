@@ -11,8 +11,6 @@ function ChatMessage({ message }) {
   const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState(false);
   
   const { text, uid, photoURL, id, reaction } = message;
-
-
   const [profilePhoto, setProfilePhoto] = useState(photoURL || 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png');
 
   const currentUserId = auth.currentUser.uid;

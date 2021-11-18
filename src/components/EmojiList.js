@@ -8,7 +8,7 @@ export default function EmojiList({emojis, className, isOwner}){
                 emojiList.map(data => (
                     <div className="emoji-list--data">
                         <span className='rounded-full bg-white p-1' title={data.reactor}>{data.emoji}</span>
-                        <span className='emoji-list--author'>{data.reactor}</span>
+                        <span className={`emoji-list--author ${isOwner? "owner" : ""} `}>{data.reactor}</span>
                     </div>
                 ))
             }
