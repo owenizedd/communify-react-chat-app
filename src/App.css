@@ -81,17 +81,16 @@
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 1023px) {
-  .emoji-picker--list {
+.emoji-picker--list {
     position: fixed;
-    top: 5vh;
+    top: 0vh;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 100;
     font-size: 2rem !important;
-  }
 }
+
 .emoji-list--author{
   opacity: 0;
   visibility: hidden;
@@ -104,6 +103,7 @@
   visibility: visible;
   width: fit-content;
   top: -10px;
+  padding: 5px;
   background:rgba(30, 30, 30, 0.8);
   color: white;
   border-radius: 5px;
@@ -112,5 +112,5 @@
 }
 .emoji-list--author.owner{
   transform: translateX(-100px);
-  width: 100px;
+  
 }
