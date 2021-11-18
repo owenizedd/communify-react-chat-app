@@ -7,11 +7,16 @@ export default function EmojiPicker({onPick, isShowing, toggleShowing}){
     }
     return (
         <div className="emoji-picker  opacity-1">
-            <p className="emoji-picker--button cursor-pointer bg-gray-800 rounded-lg pl-1" onClick={toggleShowing}>☺️ +</p>
+            
+            <p className="emoji-picker--button cursor-pointer bg-gray-800 rounded-lg pl-2 text-xl" onClick={toggleShowing}>+</p>
             {   
                 isShowing &&
-                <div className="emoji-picker--list rounded-lg bg-gray-900 px-3 py-1">
-                    { emojiUnicodes.map(emoji => <span className='text-lg cursor-pointer mx-1' onClick={() => handleEmojiPick(emoji)}>{emoji}</span>)}
+                <div className="emoji-picker--list rounded-lg bg-gray-900 px-3 py-1 pt-12">
+                    <div className='absolute flex w-11/12 justify-between pr-1 left-0 top-0 text-lg ml-5 mt-2'>
+                        <span>Pick an emoji to react</span>
+                        <span className="text-3xl -top-2 relative" onClick={toggleShowing}>x</span>
+                    </div>
+                    { emojiUnicodes.map(emoji => <span className='lg:text-lg cursor-pointer mx-1' onClick={() => handleEmojiPick(emoji)}>{emoji}</span>)}
                 </div>
             }
         </div>

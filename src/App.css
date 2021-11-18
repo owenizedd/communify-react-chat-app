@@ -81,11 +81,15 @@
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1023px) {
   .emoji-picker--list {
- 
-    width: 35vw;
-    right: -15vw;
+    position: fixed;
+    top: 5vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    font-size: 2rem !important;
   }
 }
 .emoji-list--author{

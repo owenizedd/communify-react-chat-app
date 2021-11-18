@@ -51,14 +51,14 @@ function ChatRoom() {
   }, [bottomMessage.current])
   return (
     <>
-      <div className="h-4/5 mb-12 text-white">
+      <div className="h-4/5 mb-18 text-white">
         {messages &&
           messages.map(msg => (
             <ChatMessage key={msg.id} message={msg} />))
         }
         <div ref={bottomMessage} />
       </div>
-      <form className="fixed w-full bg-indigo-900 flex justify-between bottom-0 left-0 text-white p-1" onSubmit={submitMessage}>
+      <form className="fixed w-full bg-indigo-900 flex justify-between bottom-0 left-0 text-white p-1 pb-2" onSubmit={submitMessage}>
         <input type="text" className="flex-auto px-2 bg-indigo-600" value={messageForm} onChange={(e) => setMessageForm(e.target.value)} />
         <button className="flex-auto btn btn--primary items-center justify-center text-white border border-white shadow-offset-white " type="submit" > Send 📨 </button>
       </form>
