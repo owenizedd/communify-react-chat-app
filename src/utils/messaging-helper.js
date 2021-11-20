@@ -8,10 +8,6 @@ export function filterBadWords(string) {
     string = string.trim();
     string = string.replace(/\W/g, '');
     string = string.toLowerCase();
-
-
-
-
     string = string.replace(/0/g, 'o');
     string = string.replace(/1/g, 'i');
     string = string.replace(/4/g, 'a');
