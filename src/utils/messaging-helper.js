@@ -1,3 +1,6 @@
+
+import BadWords from './bad-words';
+
 export function filterBadWords(string) {
     if (typeof string !== 'string') {
         return string;
@@ -6,8 +9,7 @@ export function filterBadWords(string) {
     string = string.replace(/\W/g, '');
     string = string.toLowerCase();
 
-    //I am sorry for putting it here, because firesbase cloud functions are paid.
-    const badWords = ['anjing', 'babi', 'taik', 'kontol', 'memek', 'ngentot'];
+
 
 
     string = string.replace(/0/g, 'o');
@@ -16,7 +18,7 @@ export function filterBadWords(string) {
     string = string.replace(/9/g, 'g');
     string = string.replace(/8/g, 'b');
 
-    if (badWords.includes(string)) {
+    if (BadWords.includes(string)) {
         return false;
     } else {
         return string;

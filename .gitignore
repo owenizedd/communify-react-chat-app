@@ -11,6 +11,9 @@
 # production
 /build
 
+#bad words
+/src/utils/bad-words.js
+
 # misc
 .DS_Store
 .env.local
