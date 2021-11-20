@@ -58,8 +58,8 @@ function ChatRoom() {
         }
         <div ref={bottomMessage} />
       </div>
-      <form className="fixed w-full bg-indigo-900 flex justify-between bottom-0 left-0 text-white p-1 pb-2" onSubmit={submitMessage}>
-        <input type="text" className="flex-auto px-2 bg-indigo-600" value={messageForm} onChange={(e) => setMessageForm(e.target.value)} />
+      <form className="fixed w-full bg-indigo-900 lg:text-lg flex justify-between bottom-0 left-0 text-white p-1 pb-2" onSubmit={submitMessage}>
+        <input type="text" className="flex-auto px-2 lg:text-lg bg-indigo-600" value={messageForm} onChange={(e) => setMessageForm(e.target.value)} />
         <button className="flex-auto btn btn--primary items-center justify-center text-white border border-white shadow-offset-white " type="submit" > Send 📨 </button>
       </form>
     </>
