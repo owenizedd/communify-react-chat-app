@@ -36,7 +36,7 @@ function ChatMessage({ message }) {
             style={{minWidth: '25px'}}
             onError={(e)=>{e.target.onerror = null; setProfilePhoto("https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png")}}/> 
         </picture>
-        <p className={`rounded-full px-5 py-3 ${ownerBg}`}>{text}</p>
+        <p className={`rounded-full px-5 py-3 ${ownerBg} lg:text-lg`}>{text}</p>
         <EmojiPicker onPick={getEmoji} isShowing={isEmojiPickerVisible} toggleShowing={toggleShowing}/>
       </div>
       <EmojiList emojis={reaction} isOwner={isOwner}/>
